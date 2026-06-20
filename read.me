@@ -1,0 +1,6 @@
+# Get FTDI image written to the file eeprom_image
+ftdi_eeprom --read-eeprom alinx.conf
+# modify eeprom_image with hexedit, for example change the last digit in serial number
+hexedit eeprom_image
+# write modified image back to ftdi eeprom
+ftdi_eeprom --flash-eeprom alinx.conf
